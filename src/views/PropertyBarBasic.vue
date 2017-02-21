@@ -1,7 +1,4 @@
 <template>
-    <h4>条形图属性</h4>
-    <prop-padding v-bind:name="'边距'"></prop-padding>
-    <br>
     <prop-position></prop-position>
 </template>
 

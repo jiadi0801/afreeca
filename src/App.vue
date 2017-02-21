@@ -1,6 +1,11 @@
 <template>
-    <property-bar-basic></property-bar-basic>
-    <chart-bar-basic></chart-bar-basic>
+    <div class="paper-wrap" >
+        <property-bar-basic></property-bar-basic>
+        <chart-bar-basic></chart-bar-basic>
+    </div>
+    <div>
+        没有计算resize时的坐标
+    </div>
 </template>
 
 <script>
@@ -15,3 +20,9 @@
         }
     }
 </script>
+<style>
+    .paper-wrap {
+        height: 400px;
+        background: #bbb;
+    }
+</style>
