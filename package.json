@@ -1,7 +1,7 @@
 {
-  "name": "jdview",
+  "name": "afreeca",
   "version": "1.0.0",
-  "description": "京东视界编辑系统",
+  "description": "编辑系统demo",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/jiadi0801/afreeca.git"
   },
   "author": "jiadi0801",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/jiadi0801/afreeca/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/jiadi0801/afreeca#readme",
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
