@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div style="position: relative; top: -12px;">图表位置</div>
+    <div class="gui-prop-position">
+        <div style="position: relative;">图表位置</div>
         <div style="display: inline-block;">
             <gui-field-number :number="position.x" v-on:change="updateX"></gui-field-number>
             <div>x坐标</div>
@@ -13,27 +13,32 @@
 </template>
 
 <script>
-    import GuiFieldNumber from '../gui/GuiFieldNumber.vue'
+    import GuiFieldNumber from '../base/GuiFieldNumber.vue'
 
     export default {
+        props: {
+            pos: {
+                type: Object,
+                default() {return {x:0, y: 0}}
+            },
+            id: String
+        },
         data() {
             return {}
         },
         computed: {
             position: {
-                get: function () {
-                    return this.$store.state.position
+                get() {
+                    return this.pos
                 },
-                set: function (val) {
-                    console.log('val', val)
-                    this.$store.commit('changePosition', {position: val})
+                set(val) {
+                    this.$store.commit('changePosition', {comp_id: this.id, position: val})
                 }
             }
         },
         methods: {
             updateX: function (num) {
                 this.position = Object.assign(this.position, {x: num})
-                console.log('updateX', this.position)
             },
             updateY: function (num) {
                 this.position = Object.assign(this.position, {y: num})

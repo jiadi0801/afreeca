@@ -1,50 +1,63 @@
 <template>
-    <div vue-id="adc" class="chart-wrap"
-         v-bind:class="basicWrap"
-         v-bind:style="style"
-         v-bind:data-x="this.position.x"
-         v-bind:data-y="this.position.y">
+    <div :vue-id="id" class="chart-wrap" :style="style" >
+        <component :is="mapping[type]" :chartData="chartData"></component>
     </div>
 </template>
+
 <script>
+    import mapping from '../config/chart-type-mapping'
+    import BarBasicChart from '../components/comps/BarBasicChart.vue'
+    import CircleExampleChart from '../components/comps/CircleExampleChart.vue'
+
     export default {
+        props: {
+            data: {
+                type: Object,
+                default() {return {}}
+            }
+        },
         data() {
             return {
-                basicWrap: 'chart-bar-basic-wrap'
+                mapping: mapping
             }
         },
         computed: {
-            position: {
-                get: function () {
-                    return this.$store.state.position
-                },
-                set: function (val) {
-                    this.$store.commit('changePosition', {position: this.position})
+            chartData() {
+                console.log(this.data)
+                return this.data
+            },
+            id() {
+                return this.data.type + '_' + this.data.comp_id
+            },
+            type() {
+                console.log(this.data.type)
+                return this.data.type
+            },
+            style() {
+                return {
+                    left: this.data.attr.x + 'px',
+                    top: this.data.attr.y + 'px',
+                    zIndex: this.data.attr.zIndex + 'px'
                 }
             },
-            style: function () {
+            position() {
                 return {
-                    left: this.position.x + 'px',
-                    top: this.position.y + 'px'
+                    x: this.data.attr.x,
+                    y: this.data.attr.y
                 }
             }
         },
         methods: {
-            scale: function () {
-                var left = this.position.x,
-                    top = this.position.y * 2
-                this.position = Object.assign(this.position, {x: left, y: top});
-            },
-
             dragMove: function (deltaPosition) {
                 var x = this.position.x + deltaPosition.x,
                     y = this.position.y + deltaPosition.y
                 this.position = Object.assign(this.position, {x, y})
+                // here 触发store的commit方法（可以放在dragDown里commit）
             }
         },
         created: function () {
             var me = this;
-            interact('[vue-id="adc"]')
+            interact('[vue-id="'+ me.id +'"]')
                 .draggable({
                     restrict: {
                         restriction: 'parent'
@@ -73,14 +86,16 @@
                     target.setAttribute('data-y', y);
                     target.textContent = Math.round(event.rect.width) + '×' + Math.round(event.rect.height);
                 })
+        },
+        components: {
+            BarBasicChart, CircleExampleChart
         }
     }
 </script>
+
 <style>
-    .chart-bar-basic-wrap {
+    .chart-wrap {
         position: absolute;
-        width: 100px;
-        height: 100px;
         background: #42B983;
     }
 </style>

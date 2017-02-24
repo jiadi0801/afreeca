@@ -9,7 +9,8 @@ module.exports = {
     filename: 'build.js'
   },
   resolveLoader: {
-    root: path.join(__dirname, 'node_modules'),
+        // fallback: path.join(__dirname, 'node_modules')
+      moduleExtensions: ['-loader']
   },
   module: {
     loaders: [

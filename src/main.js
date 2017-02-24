@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-new Vue({
-    el: 'body',
-    components: { App }
-})
+// 程序build入口
+new Vue(App).$mount('body')

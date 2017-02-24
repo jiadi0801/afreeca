@@ -25,7 +25,7 @@
     </div>
 </template>
 <script>
-import GuiFieldNumber from '../gui/GuiFieldNumber.vue';
+import GuiFieldNumber from '../base/GuiFieldNumber.vue';
 export default {
     props: {
         name: String
