@@ -1,5 +1,6 @@
 # mock平台
 ## 一期功能点
+* 支持项目配置根目录
 * 支持url、method、description
 * 支持跨域
 * 支持json和yaml文件导入，在线编辑
