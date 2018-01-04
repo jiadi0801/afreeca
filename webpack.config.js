@@ -39,10 +39,21 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use:ExtractTextPlugin.extract({
+                use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     //如果需要，可以在 sass-loader 之前将 resolve-url-loader 链接进来
-                    use: ['css-loader', 'sass-loader']
+                    use: [
+                        { loader: 'css-loader' },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                config: {
+                                    path: path.resolve(__dirname, 'postcss.config.js')
+                                }
+                            }
+                        },
+                        { loader: 'sass-loader' }
+                    ]
                 })
             },
             {
