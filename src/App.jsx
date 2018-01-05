@@ -1,5 +1,9 @@
 import React from "react";
 import axios from 'axios';
+import Header from './views/header/Header.jsx';
+import Sidebar from './views/left/Sidebar.jsx';
+import Workspace from './views/right/Workspace.jsx';
+import Footer from './views/footer/Footer.jsx';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -9,8 +13,11 @@ export default class App extends React.Component {
     
     render() {
         return (
-            <div>
-                <footer className="footer">©京东用户体验设计部-前端开发部</footer>
+            <div className="grid">
+                <Header />
+                <Sidebar />
+                <Workspace />
+                <Footer />
             </div>
         );
     }

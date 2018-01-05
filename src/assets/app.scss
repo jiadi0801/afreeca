@@ -1,3 +1,37 @@
+@import './mixin.scss';
 .grid {
-    display: flex;
+    display: grid;
+    grid-template-areas: "header header" 
+                         "sidebar content" 
+                         "footer footer";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 50px 1fr 100px;
+    grid-gap: 5px;
+    max-width: 1200px;
+    margin: 0 auto;
+    &>* {
+        border: dashed 1px lightsalmon;
+    }
+    .header {
+        grid-column: 1 / 3;
+    }
+    .left {
+        height: 100%;
+    }   
+    .right {
+        height: 400px;
+    }
+    .footer {
+        grid-column: 1 / 3;
+        height: 100px;
+    }
+}
+
+.control {
+    height: 24px;
+    padding: 0 10px;
+    line-height: 24px;
+    font-size: 12px;
+    border: solid 1px $borderColor;
+    border-radius: 24px;
 }
