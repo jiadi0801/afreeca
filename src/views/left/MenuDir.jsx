@@ -8,14 +8,11 @@ export default class MenuDir extends React.Component {
         };
     }
     render() {
+        let props = this.props;
         return (
             <div className="lg-menu-dir">
-                <span>菜单-新增组件</span>
-                <div className="fast-icon">
-                    &lt;
-                    ^
-                    &gt;
-                </div>
+                <a><i className="iconfont">&#xf123;</i><span>{props.title}</span></a>
+                <div className="fast-icon">icon</div>
             </div>
         );
     }

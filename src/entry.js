@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import base from './assets/base.scss';
-import style from './assets/app.scss';
+import iconfont from './assets/iconfont.css';
+import appstyle from './assets/app.scss';
 
 ReactDOM.render(
     <App />,

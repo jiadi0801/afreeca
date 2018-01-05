@@ -1,34 +1,206 @@
-.lg-menu {
+@import '../../assets/mixin.scss';
+.left {
     padding: 5px 5px;
+}
+
+.project {
+    display: flex;
+    padding: 0 10px 0 5px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    .proj-list {
+        display: block;
+        flex-grow: 1;
+        width: 60px;
+        @extend %ellipsis;
+        &:focus {
+            outline: 0 none;
+        }
+    }
+}
+
+.search-api {
+    position: relative;
+    align-items: center;
+    padding: 5px 0;
+    .control {
+        border: 1px solid rgba(152, 166, 173, 0.15);
+        font-size: 13px;
+        height: 34px;
+        width: 100%;
+        color: #435966;
+        font-weight: 600;
+        padding-left: 40px;
+        padding-right: 20px;
+        background: rgba(152, 166, 173, 0.1);
+        box-shadow: none;
+        border-radius: 30px;
+    }
+    button {
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        top: 50%;
+        margin-top: -8px;
+        left: 10px;
+        color: rgba(152, 166, 173, 0.7);
+        font-size: 16px;
+    }
+    button:focus {
+        outline: 0 none;
+    }
+}
+
+.left-tab {
+    margin-bottom: 5px;
+    &-hd {
+        position: relative;
+        display: flex;
+        border-bottom: solid 1px $blue;
+        .fast-icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100px;
+            height: 100%;
+        }
+    }
+    &-title {
+        padding: 0 10px;
+        font-size: 18px;
+        color: $text-muted;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: solid 4px $dblue;
+    }
+}
+.lg-menu {
     &-item {
         display: block;
         margin-bottom: 3px;
         &:last-child {
             margin-bottom: 0;
         }
+        &.unfold {
+            border-left: solid 4px $blue;
+            background: $background;
+            box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.1), 0 1px 0px 0 rgba(0, 0, 0, 0.04);
+        }
+        &:hover {
+            background: $background;
+        }
     }
     &-title {
         width: 100%;
     }
-    &-on {
-        background: #dda;
-    }
     &-sub {
+        display: none;
+        .unfold & {
+            display: block;
+        }
+
         &-item {
             display: block;
-            padding-left: 20px;
+            padding-left: 10px;
         }
     }
+    
 
     &-dir {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        line-height: 30px;
-        height: 30px;
-        background: #ccc;
+        a {
+            width: 100%;
+            font-size: 16px;
+            color: #4d585f;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 10px 13px;
+            border-left: 3px solid transparent;
+            margin: 0 7px;
+            border-bottom: 1px solid #efefef;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            i {
+                font-weight: 600;
+            }
+            span {
+                margin: 0 0 0 12px;
+                font-weight: 600;
+                overflow: hidden;
+            }
+        }
+        .fast-icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100px;
+            height: 100%;
+        }
     }
     &-file {
+        position: relative;
         display: flex;
+        a {
+            width: 100%;
+            color: #4d585f;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 8px 13px;
+            border-left: 3px solid transparent;
+            margin: 0 7px;
+            border-bottom: 1px solid #efefef;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            i {
+                font-weight: 600;
+            }
+            span {
+                font-weight: 600;
+                font-size: 14px;
+                overflow: hidden;
+            }
+        }
+        .unfold & a:hover {
+            color: $blue;
+        }
+        .fast-icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100px;
+            height: 100%;
+        }
+    }
+
+    &-on &-dir a {
+        color: $dblue;
+        font-weight: 600;
+    }
+    &-on &-file a {
+        color: $dblue;
+        font-weight: 600;
     }
 }

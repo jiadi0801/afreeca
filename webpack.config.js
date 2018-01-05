@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, './target'),
-        publicPath: process.env.NODE_ENV === 'production' ? '/afs/target' : 'target',
+        publicPath: process.env.NODE_ENV === 'production' ? '/afs/target/' : '/target/',
         filename: '[name].js'
     },
     module: {

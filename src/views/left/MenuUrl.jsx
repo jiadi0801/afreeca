@@ -10,8 +10,8 @@ export default class MenuUrl extends React.Component {
     render() {
         return (
             <div className="lg-menu-file">
-                <span>饼图-url占两行</span>
-                <span>http://index.jd.com/price/default</span>
+                <a><span>http://index.jd.com/price/default</span></a>
+                <div className="fast-icon">icon</div>
             </div>
         );
     }

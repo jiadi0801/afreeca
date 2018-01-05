@@ -1,1 +1,45 @@
 $borderColor: #ddd;
+$dblue:#3a80ea;
+$blue:#5fa7fa; 
+$text-muted: #98a6ad;
+$background: #f6f6f6;
+
+%inline-block{
+	display: inline-block;
+}
+@mixin inline-block{
+	@extend %inline-block;
+	vertical-align:middle
+}
+// 强制换行
+%break{
+  word-break:break-all;
+  word-wrap:break-word;
+}
+// 强制不换行
+%nowrap{
+  white-space:nowrap;
+}
+%ellipsis{
+  @extend %nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+@mixin ellipsis($width:100%){
+  @extend %ellipsis;
+}
+// 清除浮动
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+%clearfix {
+    @include clearfix;
+}

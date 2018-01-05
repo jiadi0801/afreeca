@@ -15,8 +15,8 @@ export default class Header extends React.Component {
                     <div className="logo">Afreeca</div>
                     <div>用户名: 刘佳</div>
                 </div>
-                <div className="project">项目下拉框项目下拉框项目下拉框项目下拉框项目下拉框项目下拉框</div>
                 <div className="right-hd">
+                    <div className="control">切换项目</div>
                     <div className="control">接口总开关</div>
                     <div className="control">网络速度控制</div>
                 </div>

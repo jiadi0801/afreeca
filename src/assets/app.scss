@@ -4,10 +4,10 @@
     grid-template-areas: "header header" 
                          "sidebar content" 
                          "footer footer";
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3.5fr;
     grid-template-rows: 50px 1fr 100px;
     grid-gap: 5px;
-    max-width: 1200px;
+    min-width: 1200px;
     margin: 0 auto;
     &>* {
         border: dashed 1px lightsalmon;
@@ -19,7 +19,7 @@
         height: 100%;
     }   
     .right {
-        height: 400px;
+        height: 600px;
     }
     .footer {
         grid-column: 1 / 3;
