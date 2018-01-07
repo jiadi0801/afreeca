@@ -15,7 +15,7 @@ export default class Sidebar extends React.Component {
         return (
             <div className="left">
                 <div className="project">
-                    <span className="proj-list">京东视界智能多屏互动平台</span>
+                    <span className="proj-list">当前项目：京东视界智能多屏互动平台</span>
                 </div>
                 <SearchAPI />
                 <div className="left-tab">

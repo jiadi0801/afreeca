@@ -1,10 +1,29 @@
 .workspace {
     position: relative;
+    padding-top: 40px;
 }
 .toolbar {
     position: absolute;
+    top: 50px;
     right: 0;
     width: 80px;
     height: 80px;
     border: solid 1px #fca;
+}
+
+.import-code {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 40px;
+    .control {
+        width: 300px;
+    }
+}
+
+.api-edit {
+    border: solid 1px #ddd;
 }
