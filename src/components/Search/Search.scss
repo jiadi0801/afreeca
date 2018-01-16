@@ -1,0 +1,31 @@
+.search-api {
+    position: relative;
+    align-items: center;
+    padding: 5px 0;
+    .control {
+        border: 1px solid rgba(152, 166, 173, 0.15);
+        font-size: 13px;
+        height: 34px;
+        width: 100%;
+        color: #435966;
+        font-weight: 600;
+        padding-left: 40px;
+        padding-right: 20px;
+        background: rgba(152, 166, 173, 0.1);
+        box-shadow: none;
+        border-radius: 30px;
+    }
+    button {
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        top: 50%;
+        margin-top: -8px;
+        left: 10px;
+        color: rgba(152, 166, 173, 0.7);
+        font-size: 16px;
+    }
+    button:focus {
+        outline: 0 none;
+    }
+}

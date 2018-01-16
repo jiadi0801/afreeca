@@ -1,9 +1,9 @@
 import React from "react";
 import axios from 'axios';
-import Header from './views/header/Header.jsx';
+import Header from './views/Header/Header.jsx';
 import Sidebar from './views/left/Sidebar.jsx';
-import Workspace from './views/right/Workspace.jsx';
-import Footer from './views/footer/Footer.jsx';
+import Workspace from './views/Workspace/Workspace.jsx';
+import Footer from './views/Footer/Footer.jsx';
 
 export default class App extends React.Component {
     constructor(props) {

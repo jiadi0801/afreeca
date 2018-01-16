@@ -1,11 +1,9 @@
 import React from 'react';
+import style from './Search.scss';
 
-export default class SearchAPI extends React.Component {
+export default class Search extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-
-        };
     }
     render() {
         return (

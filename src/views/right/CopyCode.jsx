@@ -7,9 +7,9 @@ export default class CopyCode extends React.Component {
     render() {
         let value = `<script src="http://afreeca.jd.com/project123.js"></script>`
         return (
-            <div class="import-code">
+            <div className="import-code">
                 <span>工程引入代码</span>
-                <input type="text" class="control" value={value} />
+                <input type="text" className="control" value={value} />
             </div>
         );
     }

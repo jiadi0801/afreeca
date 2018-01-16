@@ -1,7 +1,7 @@
 import React from 'react';
 import left from './left.scss';
 
-import SearchAPI from './SearchAPI.jsx';
+import Search from '../../components/Search/Search.jsx';
 import MenuDir from './MenuDir.jsx';
 import MenuUrl from './MenuUrl.jsx';
 import MenuItem from './MenuItem.jsx';
@@ -17,7 +17,7 @@ export default class Sidebar extends React.Component {
                 <div className="project">
                     <span className="proj-list">当前项目：京东视界智能多屏互动平台</span>
                 </div>
-                <SearchAPI />
+                <Search />
                 <div className="left-tab">
                     <div className="left-tab-hd">
                         <span className="left-tab-title">接口集</span>
